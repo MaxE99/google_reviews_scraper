@@ -90,7 +90,7 @@ class GoogleReviewsScraper:
         return reviews
 
     def write_to_csv(self, reviews):
-        with open(f'{self.search_term} - Google Reviews', 'w') as f:
+        with open(f'{self.search_term} - Google Reviews', 'w', encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(self.header)
             writer.writerows(reviews)
