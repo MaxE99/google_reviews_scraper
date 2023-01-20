@@ -26,6 +26,7 @@ class GoogleReviewsScraper:
     def set_driver(self):
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
+        options.add_argument('--ignore-certificate-errors')
         options.set_capability("goog:loggingPrefs", {"performance": "ALL", "browser": "ALL"})
         return webdriver.Chrome(options=options)
 
